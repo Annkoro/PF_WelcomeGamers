@@ -29,5 +29,5 @@ https://docs.google.com/spreadsheets/d/1d53JSh68pvfZPoLOxZhf4IcHg6uLL7ZF_TQ8ivzg
 - IDE：Cloud9
 
 ## 使用素材
-- ロゴ
-- 画像
+- ロゴ：Font Awesome "https://fontawesome.com/kits/fa1e667fcf/use?welcome=yes"
+- 画像：ぱくたそ "https://www.pakutaso.com/"
