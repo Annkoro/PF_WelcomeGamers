@@ -1,24 +1,33 @@
-# README
+# <WelcomeGamers!>
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## サイト概要
+<ゲームフレンド募集サイト>
 
-Things you may want to cover:
+### サイトテーマ
+<みんなでゲームやろう！>
 
-* Ruby version
+### テーマを選んだ理由
+<自分がゲームで遊んでいたときに一緒にできる人がいたらもっと楽しいと思ったから。コメントで募集するだけだと性格の合う合わないがあると思うので、ユーザーのプロフィールも閲覧できその上で、募集に参加できたらいいと考えました。>
 
-* System dependencies
+### ターゲットユーザ
+<一緒にゲームで遊びたいフレンドを探している方。>
 
-* Configuration
+### 主な利用シーン
+<普段は一人で遊んでいたが、マルチプレイのゲームでコミュニケーションをとりながら遊びたくなった時。>
 
-* Database creation
+## 設計書
+<>
 
-* Database initialization
+## チャレンジ要素一覧
+<https://docs.google.com/spreadsheets/d/1d53JSh68pvfZPoLOxZhf4IcHg6uLL7ZF_TQ8ivzgHk8/edit?usp=sharing>
 
-* How to run the test suite
+## 開発環境
+- OS：Linux(CentOS)
+- 言語：HTML,CSS,JavaScript,Ruby,SQL
+- フレームワーク：Ruby on Rails
+- JSライブラリ：jQuery
+- IDE：Cloud9
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 使用素材
+- ロゴ
+- 画像
