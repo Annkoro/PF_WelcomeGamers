@@ -21,9 +21,7 @@
 ## 設計書
 - UI Flows
 
-- ワイヤーフレーム
-
-https://drive.google.com/file/d/16Db-1UwlQ1gVLe-dzTJoN_DMHZ-UYxkQ/view?usp=sharing
+- ワイヤーフレーム https://drive.google.com/file/d/16Db-1UwlQ1gVLe-dzTJoN_DMHZ-UYxkQ/view?usp=sharing
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1d53JSh68pvfZPoLOxZhf4IcHg6uLL7ZF_TQ8ivzgHk8/edit?usp=sharing
