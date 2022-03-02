@@ -20,6 +20,7 @@
 
 ## 設計書
 - UI Flows
+https://drive.google.com/file/d/1styG3sCdh9hJ_OsH-YZvd7Dx5NXXfwBC/view?usp=sharing
 
 - ワイヤーフレーム
 https://drive.google.com/file/d/16Db-1UwlQ1gVLe-dzTJoN_DMHZ-UYxkQ/view?usp=sharing
