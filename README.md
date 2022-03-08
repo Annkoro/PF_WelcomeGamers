@@ -28,6 +28,12 @@
 - ER図
 "https://drive.google.com/file/d/18dUIJ6e0ImgkhsFaTRexl352HR8KL2Vd/view?usp=sharing"
 
+- テーブル提議書
+"https://docs.google.com/spreadsheets/d/1NPTaL4rNLYnv-11fxLaGRFw4grasgpImnB9ArBpuuC0/edit?usp=sharing"
+
+- アプリケーション詳細設計書
+""
+
 ## チャレンジ要素一覧
 "https://docs.google.com/spreadsheets/d/1d53JSh68pvfZPoLOxZhf4IcHg6uLL7ZF_TQ8ivzgHk8/edit?usp=sharing"
 
