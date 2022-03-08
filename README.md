@@ -32,7 +32,7 @@
 "https://docs.google.com/spreadsheets/d/1NPTaL4rNLYnv-11fxLaGRFw4grasgpImnB9ArBpuuC0/edit?usp=sharing"
 
 - アプリケーション詳細設計書
-""
+"https://docs.google.com/spreadsheets/d/1C2vRQGAW9udZEUWy_1dpIPkL2F3ZWW6o8djc9EF8iYI/edit?usp=sharing"
 
 ## チャレンジ要素一覧
 "https://docs.google.com/spreadsheets/d/1d53JSh68pvfZPoLOxZhf4IcHg6uLL7ZF_TQ8ivzgHk8/edit?usp=sharing"
