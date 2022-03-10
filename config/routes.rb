@@ -17,6 +17,11 @@ Rails.application.routes.draw do
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions"
   }
+  
+  #ユーザー側のURLにはpublicはつかない
+  scope module: :public do
+    resources :posts
+  end
 
 
   #管理者側のURLにadminをつける
