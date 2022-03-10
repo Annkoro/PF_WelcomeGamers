@@ -1,6 +1,22 @@
 Rails.application.routes.draw do
-  devise_for :users
-  devise_for :admins
+
+  #ログイン前トップ画面
+  root to: "homes#top"
+
+  #顧客用（登録とログインのみ）
+  #URL /users/sign_in ...
+  devise_for :users, skip: [:passwords], controllers: {
+    registrations: "public/registrations",
+    sessions: "public/sessions"
+  }
+
+  get 'public/top' => 'public/users#top'
+
+  #管理者用（ログインのみ）
+  #URL /admin/sign_in ...
+  devise_for :admin, skip: [:registrations, :passwords], controllers: {
+    sessions: "admin/sessions"
+  }
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
