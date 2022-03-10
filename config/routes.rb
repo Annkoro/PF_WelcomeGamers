@@ -18,8 +18,13 @@ Rails.application.routes.draw do
     sessions: "admin/sessions"
   }
   
-  
-  #管理者側のURLにadminを
+  #ユーザー側のURLにはpublicはつかない
+  scope module: :public do
+    resources :posts
+  end
+
+
+  #管理者側のURLにadminをつける
   namespace :admin do
     resources :users, only: [:index, :show, :edit, :update]
   end
