@@ -17,9 +17,9 @@ Rails.application.routes.draw do
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
     sessions: "admin/sessions"
   }
-  
-  
-  #管理者側のURLにadminを
+
+
+  #管理者側のURLにadminをつける
   namespace :admin do
     resources :users, only: [:index, :show, :edit, :update]
   end
