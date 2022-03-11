@@ -1,0 +1,19 @@
+<div>
+  <h4><%= @user.name %></h4>
+  <p>性別</p>
+  <p>機種：<%#= @user.divice %></p>
+  <p>VCの有無</p>
+  <%= image_tag @user.get_profile_image(100, 100) %>
+  <% if @user == current_user %>
+    <p><%= link_to "プロフィール編集", edit_user_path(current_user.id) %></p>
+  <% end %>
+</div>
+
+<% @posts.each do |posts| %>
+<div>
+  <%= link_to post_path(posts.id) do %>
+  <% end %>
+<p>募集タイトル：<%= posts.title %></p>
+<p>募集文：<%= posts.caption %></p>
+</div>
+<% end %>
