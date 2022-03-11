@@ -1,0 +1,12 @@
+<h2>募集タイトル</h2>
+<div>
+  <p>募集タイトル</p>
+  <%= @post.title %>
+  <h2>募集文</h2>
+  <p>ユーザーネーム：<%= @post.user.name %></p>
+  <p><%= @post.caption %></p>
+  <% if @post.user == current_user %>
+    <%= link_to "編集する", edit_post_path(@post.id) %>
+    <%= link_to "削除する", post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+  <% end %>
+</div>
