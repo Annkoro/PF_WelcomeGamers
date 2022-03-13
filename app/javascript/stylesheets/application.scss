@@ -1,2 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~@fortawesome/fontawesome-free/scss/fontawesome';
+
+
+  .card-wrapper {
+    display: flex;
+    background-color: #fff;
+    box-shadow: 2px 2px 4px gray;
+    margin-bottom: 20px;
+  }
+  .profile-image {
+    padding: 16px;
+    padding-top: 32px;
+    flex-basis: 18%
+  }
+  .card-main {
+    flex-basis: 82%;
+  }
