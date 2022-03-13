@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     sessions: "public/sessions"
   }
 
-  get 'public/top' => 'public/users#top'
+  # get 'public/top' => 'public/users#top'
 
   #管理者用（ログインのみ）
   #URL /admin/sign_in ...
@@ -20,7 +20,14 @@ Rails.application.routes.draw do
 
   #ユーザー側のURLにはpublicはつかない
   scope module: :public do
-    resources :posts
+    resources :posts do
+      resources :comments, only: [:create, :destroy]
+    end
+    resources :users, except: [:new, :create, :destroy] do
+      member do
+        get 'top'
+      end
+    end
   end
 
 

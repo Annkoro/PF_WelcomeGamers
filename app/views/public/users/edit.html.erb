@@ -1,0 +1,12 @@
+<h2>プロフィール編集</h2>
+<%= form_with model: @user do |f| %>
+  <label for="name">ユーザーネーム</label>
+  <%= f.text_field :name, autofocus: true, id: "name", placeholder: "名前" %>
+  <label for="profile_image">プロフィール画像</label>
+  <%= f.file_field :profile_image, accept: "image/*" %>
+  <label for="device">使用機種</label>
+  <%= f.text_field :device %>
+  <label for="caption">自己紹介文</label>
+  <%= f.text_area :caption, placeholder: "自己紹介文などを記入してください" %>
+  <%= f.submit "変更を保存する" %>
+<% end %>

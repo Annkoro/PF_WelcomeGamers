@@ -1,14 +1,27 @@
-<h1>募集一覧ページ</h1>
+<div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-8 offset-md-1'>
+    <h1>募集一覧ページ</h1>
 
-<% @posts.each do |posts| %>
-<div>
-  <%= link_to post_path(posts.id) do %>
-    <p>募集タイトル</p>
-    <%= posts.title %>
-    <p>募集文</p>
-    <p>ユーザーネーム：<%= posts.user.name %></p>
-    <p>投稿日：<%= posts.created_at.strftime('%Y/%m/%d') %></p>
-    <p><%= posts.caption %></p>
-  <% end %>
+    <% @posts.each do |posts| %>
+    <div class="card-wrapper">
+      <div class="profile-image">
+        <%= image_tag posts.user.profile_image, size: "80x80", class: "rounded-circle" %>
+      </div>
+      <div class="card-main">
+        <%= link_to post_path(posts.id) do %>
+          <p>募集タイトル</p>
+          <%= posts.title %>
+          <p>募集文</p>
+          <p>ユーザーネーム：<%= posts.user.name %></p>
+          <p>投稿日：<%= posts.created_at.strftime('%Y/%m/%d') %></p>
+          <p><%= posts.caption %></p>
+          <p><%= link_to "#{posts.comments.count} コメント", post_path(posts.id) %></p>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+    </div>
+  </div>
 </div>
-<% end %>
+
