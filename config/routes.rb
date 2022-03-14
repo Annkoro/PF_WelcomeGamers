@@ -25,6 +25,7 @@ Rails.application.routes.draw do
       resource :favorites, only: [:create, :destroy]
     end
     resources :users, except: [:new, :create, :destroy] do
+      resource :relationships, only: [:create, :destroy]
       member do
         get 'top'
       end
