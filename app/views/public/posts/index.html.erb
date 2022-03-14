@@ -3,20 +3,33 @@
     <div class='col-md-8 offset-md-1'>
     <h1>募集一覧ページ</h1>
 
-    <% @posts.each do |posts| %>
+    <% @posts.each do |post| %>
     <div class="card-wrapper">
       <div class="profile-image">
-        <%= image_tag posts.user.profile_image, size: "80x80", class: "rounded-circle" %>
+        <%= image_tag post.user.profile_image, size: "80x80", class: "rounded-circle" %>
       </div>
       <div class="card-main">
-        <%= link_to post_path(posts.id) do %>
+        <%= link_to post_path(post.id) do %>
           <p>募集タイトル</p>
-          <%= posts.title %>
+          <%= post.title %>
           <p>募集文</p>
-          <p>ユーザーネーム：<%= posts.user.name %></p>
-          <p>投稿日：<%= posts.created_at.strftime('%Y/%m/%d') %></p>
-          <p><%= posts.caption %></p>
-          <p><%= link_to "#{posts.comments.count} コメント", post_path(posts.id) %></p>
+          <p>ユーザーネーム：<%= post.user.name %></p>
+          <p><%= post.caption %></p>
+          <p><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></p>
+          <% if post.favorited_by?(current_user) %>
+            <p>
+              <%= link_to post_favorites_path(post), method: :delete do %>
+                 <i class="fas fa-heart"></i><%= post.favorites.count %> いいね
+              <% end %>
+            </p>
+            <% else %>
+            <p>
+              <%= link_to post_favorites_path(post), method: :post do %>
+                <i class="far fa-heart"></i><%= post.favorites.count %> いいね
+              <% end %>
+            </p>
+          <% end %>
+          <p>投稿日：<%= post.created_at.strftime('%Y/%m/%d') %></p>
         <% end %>
       </div>
     </div>
