@@ -23,14 +23,14 @@ class Public::UsersController < ApplicationController
     redirect_to user_path(@user.id)
   end
 
-  def follows
+  def followings
     @user = User.find(params[:id])
-    @users = user.followings
+    @users = @user.followings
   end
 
   def followers
     @user = User.find(params[:id])
-    @users = user.followers
+    @users = @user.followers
   end
 
 
