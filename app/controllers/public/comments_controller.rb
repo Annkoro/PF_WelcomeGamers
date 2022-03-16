@@ -1,4 +1,5 @@
 class Public::CommentsController < ApplicationController
+  before_action :authenticate_user!
 
   def create
     @post = Post.find(params[:post_id])
@@ -9,8 +10,10 @@ class Public::CommentsController < ApplicationController
   end
 
   def destroy
-  Comment.find(params[:id]).destroy
-  redirect_to
+  # Comment.find(params[:id]).destroy
+  @comment = Comment.find(params[:id])
+  @comment.destroy
+  redirect_to post_path(params[:post_id])
   end
 
 

@@ -1,11 +1,11 @@
 class Public::UsersController < ApplicationController
-
+  before_action :authenticate_user!
 
   def top
   end
 
   def index
-    @users = User.all
+    @users = User.page(params[:page]).per(10)
   end
 
   def show
@@ -21,6 +21,16 @@ class Public::UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to user_path(@user.id)
+  end
+
+  def followings
+    @user = User.find(params[:id])
+    @users = @user.followings
+  end
+
+  def followers
+    @user = User.find(params[:id])
+    @users = @user.followers
   end
 
 
