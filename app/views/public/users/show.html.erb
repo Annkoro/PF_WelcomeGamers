@@ -12,20 +12,12 @@
         <% end %>
         <h4><%= @user.name %></h4>
       </div>
-      <div class="display">
-        <p><%= link_to @user.followings.count, followings_user_path(@user) %>フォロー <%= link_to @user.followers.count, followers_user_path(@user) %>フォロワー</p>
-      </div>
-
       <div>
-        <p>性別</p>
-        <p>機種：<%= @user.device %></p>
-        <p>VCの有無</p>
-
+        <p><%= link_to @user.followings.count, followings_user_path(@user) %>フォロー <%= link_to @user.followers.count, followers_user_path(@user) %>フォロワー</p>
         <% if @user == current_user %>
           <p><%= link_to "プロフィール編集", edit_user_path(current_user.id) %></p>
         <% end %>
-
-        <% if current_user != @user %>
+         <% if current_user != @user %>
           <% if @user.followed_by?(current_user) %>
             <p><%= link_to "フォローを外す", user_relationships_path(@user.id), class: "btn btn btn-success", method: :delete %></p>
           <% else %>
@@ -34,7 +26,14 @@
         <% end %>
       </div>
 
-      <div>
+      <table>
+            <div>
+              <p>性別</p>
+              <p>機種：<%= @user.device %></p>
+              <p>VCの有無</p>
+            <div>
+      </table>
+
         <% @posts.each do |posts| %>
           <%= link_to post_path(posts.id) do %>
           <% end %>
@@ -42,6 +41,7 @@
         <p>募集文：<%= posts.caption %></p>
         <% end %>
       </div>
+
     </div>
    </div>
   </div>
