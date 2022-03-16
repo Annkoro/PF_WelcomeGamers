@@ -1,7 +1,11 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-10 mt-5">
-      <h2>プロフィール</h2>
+      <% if current_user == @user %>
+        <h2><i class="fas fa-address-card"></i>マイページ</h2>
+      <% else %>
+        <h2><i class="fas fa-user"></i>プロフィール</h2>
+      <% end %>
 
     <div class="text-center">
       <div>
@@ -15,7 +19,7 @@
       <div>
         <p><%= link_to @user.followings.count, followings_user_path(@user) %>フォロー <%= link_to @user.followers.count, followers_user_path(@user) %>フォロワー</p>
         <% if @user == current_user %>
-          <p><%= link_to "プロフィール編集", edit_user_path(current_user.id) %></p>
+          <p><%= link_to "プロフィール編集", edit_user_path(current_user.id), class: "btn btn btn-secondary" %></p>
         <% end %>
          <% if current_user != @user %>
           <% if @user.followed_by?(current_user) %>
@@ -26,19 +30,28 @@
         <% end %>
       </div>
 
-      <table>
-            <div>
-              <p>性別</p>
-              <p>機種：<%= @user.device %></p>
-              <p>VCの有無</p>
-            <div>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>性別</th>
+            <td><%= @user.gender %></td>
+          </tr>
+          <tr>
+            <th>機種</th>
+            <td><%= @user.device %></td>
+          </tr>
+          <tr>
+            <th>VCの有無</th>
+            <td><%#= @user.vc %></td>
+          </tr>
+        </tbody>
       </table>
 
-        <% @posts.each do |posts| %>
-          <%= link_to post_path(posts.id) do %>
-          <% end %>
-        <p>募集タイトル：<%= posts.title %></p>
-        <p>募集文：<%= posts.caption %></p>
+        <% @posts.each do |post| %>
+          <%= link_to post_path(post.id) do %>
+          <p>募集タイトル：<%= post.title %></p>
+          <!--<p>募集文：<%#= post.caption %></p>-->
+        <% end %>
         <% end %>
       </div>
 
