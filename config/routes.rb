@@ -10,8 +10,6 @@ Rails.application.routes.draw do
     sessions: "public/sessions"
   }
 
-  # get 'public/top' => 'public/users#top'
-
   #管理者用（ログインのみ）
   #URL /admin/sign_in ...
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
@@ -32,6 +30,10 @@ Rails.application.routes.draw do
         get 'followers'
       end
     end
+    resources :contacts, only: [:new, :create]
+      post 'confirm'
+      post 'back'
+      get 'done'
   end
 
 
