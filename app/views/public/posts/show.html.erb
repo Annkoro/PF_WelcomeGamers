@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10 mt-5">
+      <h2><i class="fab fa-readme"></i>投稿詳細</h2>
+      <div>
+        <p>募集タイトル</p>
+        <%= @post.title %>
+        <p>募集文</p>
+        <p><%= @post.caption %></p>
+        <p>
+          <%= link_to user_path(@post.user.id) do %>
+            <%= @post.user.name %>
+          <% end %>
+        </p>
+        <% if @post.user == current_user %>
+          <%= link_to "編集する", edit_post_path(@post.id) %>
+          <%= link_to "削除する", post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+        <% end %>
+      </div>
+      <div>
+        <% if @post.favorited_by?(current_user) %>
+          <p>
+            <%= link_to post_favorites_path(@post), method: :delete do %>
+               <i class="fas fa-heart"></i><%= @post.favorites.count %> いいね
+            <% end %>
+          </p>
+          <% else %>
+          <p>
+            <%= link_to post_favorites_path(@post), method: :post do %>
+              <i class="far fa-heart"></i><%= @post.favorites.count %> いいね
+            <% end %>
+          </p>
+        <% end %>
+      </div>
+      <table class="table text-center">
+        <p>コメント<%= @post.comments.count %>件</p>
+        <% @post.comments.each do |comment| %>
+          <% if comment.user.profile_image.attached? %>
+            <%= image_tag comment.user.profile_image, size: "50x50", class: "rounded-circle" %>
+          <% else %>
+            <%= image_tag 'no_image', size: "50x50", class: "rounded-circle" %>
+          <% end %>
+          <%= comment.user.name %>
+          <%= comment.comment %>
+          <%= comment.created_at.strftime('%Y/%m/%d') %>
+          <% if comment.user == current_user %>
+            <%= link_to "コメントを削除する", post_comment_path(comment.post, comment), method: :delete %>
+          <% end %>
+        <% end %>
+      </table>
+      <div class="form-group">
+        <%= form_with model: [@post, @comment] do |f| %>
+          <%= f.text_area :comment, rows: '5', placeholder: "コメント入力" %>
+          <%= f.submit "コメントを送信する" %>
+        <% end %>
+      </div>
+   </div>
+  </div>
+</div>
