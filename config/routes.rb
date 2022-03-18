@@ -9,9 +9,6 @@ Rails.application.routes.draw do
     registrations: "public/registrations",
     sessions: "public/sessions"
   }
-
-  # get 'public/top' => 'public/users#top'
-
   #管理者用（ログインのみ）
   #URL /admin/sign_in ...
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
@@ -37,8 +34,10 @@ Rails.application.routes.draw do
 
   #管理者側のURLにadminをつける
   namespace :admin do
-    resources :users, only: [:index, :show, :edit, :update]
-  end
+    resources :users, only: [:index, :show, :destroy]
+    resources :posts, only: [:index, :show, :destroy] do
+      resources :comments, only: [:destroy]
+    end
 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  end
 end

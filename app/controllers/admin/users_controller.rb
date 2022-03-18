@@ -1,5 +1,4 @@
-class Public::UsersController < ApplicationController
-  before_action :authenticate_user!
+class Admin::UsersController < ApplicationController
 
   def index
     @users = User.page(params[:page]).per(10)
@@ -17,7 +16,13 @@ class Public::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to user_path(@user.id)
+    redirect_to admin_user_path(@user.id)
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to admin_users_path
   end
 
   def followings
@@ -30,11 +35,11 @@ class Public::UsersController < ApplicationController
     @users = @user.followers
   end
 
-
   private
 
   def user_params
     params.require(:user).permit(:name, :caption, :profile_image, :gender, :device)
   end
+
 
 end
