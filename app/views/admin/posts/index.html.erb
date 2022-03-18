@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10 mt-5">
+    <h2><i class="fas fa-handshake"></i>募集一覧ページ</h2>
+
+    <% @posts.each do |post| %>
+    <div class="card-wrapper">
+      <div class="profile-image">
+        <% if post.user.profile_image.attached? %>
+          <%= image_tag post.user.profile_image, size: "80x80", class: "rounded-circle" %>
+        <% else %>
+          <%= image_tag 'no_image', size: "80x80", class: "rounded-circle" %>
+        <% end %>
+      </div>
+      <div class="card-main">
+        <%= link_to admin_post_path(post.id) do %>
+          <p>募集タイトル</p>
+          <%= post.title %>
+          <p>募集文</p>
+          <p><%= post.caption %></p>
+          <p>ユーザーネーム：<%= post.user.name %></p>
+          <p><%= "#{post.comments.count} コメント" %></p>
+          <p><i class="fas fa-heart"></i><%= post.favorites.count %> いいね</p>
+          <div class="bottom_right">
+            <p>投稿日：<%= post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+    <%= paginate @posts %>
+    </div>
+  </div>
+</div>
