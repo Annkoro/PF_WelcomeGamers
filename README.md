@@ -38,6 +38,8 @@
 "https://docs.google.com/spreadsheets/d/1d53JSh68pvfZPoLOxZhf4IcHg6uLL7ZF_TQ8ivzgHk8/edit?usp=sharing"
 
 ## 開発環境
+- ruby 2.6.3
+- Rails 6.1.4
 - OS：Windows10
 - 言語：HTML,CSS,JavaScript,Ruby,SQL
 - フレームワーク：Ruby on Rails

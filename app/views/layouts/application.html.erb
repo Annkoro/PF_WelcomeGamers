@@ -12,7 +12,7 @@
 
   <body>
     <!--#ログイン前トップ画面にはheaderを非表示-->
-    <% unless current_page?(root_path) %>
+    <% if user_signed_in? || admin_signed_in? %>
       <%= render 'layouts/header' %>
     <% end %>
     <%= yield %>

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10 mt-5">
+      <h2><i class="fab fa-readme"></i>投稿詳細</h2>
+      <div>
+        <p>募集タイトル</p>
+        <%= @post.title %>
+        <p>募集文</p>
+        <p><%= @post.caption %></p>
+        <p><%= link_to user_path(@post.user.id) do %><%= @post.user.name %><% end %></p>
+        <p><i class="fas fa-heart"></i><%= @post.favorites.count %> いいね</p>
+        <%= link_to "削除する", admin_post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+      </div>
+
+
+      <table class="table text-center">
+        <p>コメント<%= @post.comments.count %>件</p>
+        <% @post.comments.each do |comment| %>
+          <% if comment.user.profile_image.attached? %>
+            <%= image_tag comment.user.profile_image, size: "50x50", class: "rounded-circle" %>
+          <% else %>
+            <%= image_tag 'no_image', size: "50x50", class: "rounded-circle" %>
+          <% end %>
+          <%= comment.user.name %>
+          <%= comment.comment %>
+          <%= comment.created_at.strftime('%Y/%m/%d') %>
+          <%= link_to "コメントを削除する", admin_post_comment_path(comment.post, comment), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+        <% end %>
+      </table>
+   </div>
+  </div>
+</div>
