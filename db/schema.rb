@@ -86,7 +86,11 @@ ActiveRecord::Schema.define(version: 2022_03_14_112927) do
   create_table "users", force: :cascade do |t|
     t.string "name", default: "", null: false
     t.integer "gender"
+    t.string "gameid"
     t.string "device"
+    t.string "voicechat"
+    t.string "playstyle"
+    t.string "playtime"
     t.text "caption"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false

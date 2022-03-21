@@ -24,7 +24,6 @@ Rails.application.routes.draw do
     resources :users, except: [:new, :create, :destroy] do
       resource :relationships, only: [:create, :destroy]
       member do
-        get 'top'
         get 'followings'
         get 'followers'
       end

@@ -33,12 +33,28 @@
             <td><%= @user.gender %></td>
           </tr>
           <tr>
-            <th>機種</th>
+            <th>ゲームID</th>
+            <td><%= @user.gameid %></td>
+          </tr>
+          <tr>
+            <th>使用機種</th>
             <td><%= @user.device %></td>
           </tr>
           <tr>
-            <th>VCの有無</th>
-            <td><%#= @user.vc %></td>
+            <th>ボイスチャット</th>
+            <td><%= @user.voicechat %></td>
+          </tr>
+          <tr>
+            <th>プレイスタイル</th>
+            <td><%= @user.playstyle %></td>
+          </tr>
+          <tr>
+            <th>プレイ時間帯</th>
+            <td><%= @user.playtime %></td>
+          </tr>
+          <tr>
+            <th>自己紹介文</th>
+            <td><%= @user.caption %></td>
           </tr>
         </tbody>
       </table>

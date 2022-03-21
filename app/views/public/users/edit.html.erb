@@ -11,12 +11,28 @@
         <%= f.file_field :profile_image, accept: "image/*" %><br>
       </div>
       <div class="form-group">
+        <label for="gameid">ゲームID</label>
+        <%= f.text_field :gameid, placeholder: "使用中のID", class: "form-control" %>
+      </div>
+      <div class="form-group">
         <label for="device">使用機種</label>
-        <%= f.text_field :device, class: "form-control" %>
+        <%= f.text_field :device, placeholder: "PCやPS5など", class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <label for="voicechat">ボイスチャット</label>
+        <%= f.text_field :voicechat, placeholder: "有りor無し", class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <label for="playstyle">プレイスタイル</label>
+        <%= f.text_field :playstyle, placeholder: "エンジョイやガチなど", class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <label for="playtime">プレイ時間帯</label>
+        <%= f.text_field :playtime, placeholder: "普段遊んでいる時間帯", class: "form-control" %>
       </div>
       <div class="form-group">
         <label for="caption">自己紹介文</label>
-        <%= f.text_area :caption, placeholder: "自己紹介文などを記入してください", class: "form-control form-control-lg" %>
+        <%= f.text_area :caption, placeholder: "400文字以内で記入してください", class: "form-control form-control-lg" %>
       </div>
       <%= f.submit "変更を保存する", class: "btn btn-lg btn-primary btn-block mb-3" %>
     <% end %>
