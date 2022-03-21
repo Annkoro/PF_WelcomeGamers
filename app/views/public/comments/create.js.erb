@@ -1,1 +1,2 @@
-$('#comment_btn_<%= @comment.id %>').html("<%= j(render partial: 'public/comments/comment', locals: {post: @post, comment: @comment}) %>");
+$('#comment_area').append("<%= j(render partial: 'public/comments/comment', locals: {post: @post, comment: @comment})%>");
+$('#comment_comment').val('');
