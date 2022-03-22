@@ -7,7 +7,7 @@ class Public::RegistrationsController < Devise::RegistrationsController
     user_path(current_user.id)
   end
 
-  #呼び出された他のコントローラーからも参照できる
+  # 呼び出された他のコントローラーからも参照できる
   protected
 
   def configure_permitted_parameters

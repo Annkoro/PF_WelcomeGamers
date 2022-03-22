@@ -1,5 +1,4 @@
 class Admin::PostsController < ApplicationController
-
   def index
     @posts = Post.page(params[:page]).per(3)
   end
@@ -14,7 +13,6 @@ class Admin::PostsController < ApplicationController
     @post.destroy
     redirect_to admin_posts_path
   end
-
 
   private
 

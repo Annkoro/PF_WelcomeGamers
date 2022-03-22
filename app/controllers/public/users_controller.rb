@@ -5,7 +5,6 @@ class Public::UsersController < ApplicationController
     @users = User.page(params[:page]).per(10)
     @q = User.ransack(params[:q])
     @searches = @q.result(distinct: true)
-
   end
 
   def show
@@ -33,11 +32,9 @@ class Public::UsersController < ApplicationController
     @users = @user.followers
   end
 
-
   private
 
   def user_params
-    params.require(:user).permit(:name, :caption, :profile_image, :gender,:gameid, :device, :voicechat, :playstyle, :playtime)
+    params.require(:user).permit(:name, :caption, :profile_image, :gender, :gameid, :device, :voicechat, :playstyle, :playtime)
   end
-
 end

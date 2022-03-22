@@ -1,5 +1,4 @@
 class Admin::UsersController < ApplicationController
-
   def index
     @users = User.page(params[:page]).per(10)
   end
@@ -40,6 +39,4 @@ class Admin::UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :caption, :profile_image, :gender, :device)
   end
-
-
 end
