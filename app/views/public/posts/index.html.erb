@@ -10,19 +10,21 @@
           <%= image_tag post.user.profile_image, size: "80x80", class: "rounded-circle" %>
         <% else %>
           <%= image_tag 'no_image', size: "80x80", class: "rounded-circle" %>
-        <% end %>
+        <% end %><br>
+        <%= post.user.name %>
       </div>
+
       <div class="card-main">
         <%= link_to post_path(post.id) do %>
           <div class="post_title">
-            <%= post.title %>
+            <p class="badge badge-pill badge-success"><%= post.title %></p>
           </div>
-          <!--<p>募集文</p>-->
-          <p><%= post.caption %></p>
-          <p>ユーザーネーム：<%= post.user.name %></p>
-          <p><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></p>
-          <div id="favorite_btn_<%= post.id %>">
-            <%= render partial: "public/favorites/favorite", locals: { post: post } %>
+            <p class="text-dark"><%= post.caption %></p>
+          <div class="d-flex">
+            <div id="favorite_btn_<%= post.id %>">
+              <%= render partial: "public/favorites/favorite", locals: { post: post } %>
+            </div>
+            <p><i class="fas fa-comment-dots"></i><%= link_to "#{post.comments.count}コメント", post_path(post.id) %></p>
           </div>
           <div class="bottom_right">
             <p>投稿日：<%= post.created_at.strftime('%Y/%m/%d %H:%M') %></p>

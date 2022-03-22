@@ -17,6 +17,18 @@
             <th class="col-3">募集内容</th>
             <td class="col-9"><%= @post.caption %></td>
           </tr>
+          <tr>
+            <th class="col-3">使用機種</th>
+            <td class="col-9"><%= @post.user.device %></td>
+          </tr>
+          <tr>
+            <th class="col-3">投稿日時</th>
+            <td class="col-9"><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+          </tr>
+          <tr>
+            <th class="col-3">更新日時</th>
+            <td class="col-9"><%= @post.updated_at.strftime('%Y/%m/%d %H:%M') %></td>
+          </tr>
         </tbody>
       </table>
 
