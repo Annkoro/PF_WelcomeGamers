@@ -3,6 +3,9 @@ class Public::UsersController < ApplicationController
 
   def index
     @users = User.page(params[:page]).per(10)
+    @q = User.ransack(params[:q])
+    @searches = @q.result(distinct: true)
+
   end
 
   def show
