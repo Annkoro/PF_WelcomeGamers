@@ -6,7 +6,9 @@
       <% else %>
         <h2><i class="fas fa-user"></i>プロフィール</h2>
       <% end %>
-
+      <div class="notification">
+        <p id="notice"><%= notice %></p>
+      </div>
     <div class="text-center">
       <div>
         <% if @user.profile_image.attached? %>
@@ -18,7 +20,7 @@
       </div>
       <div>
         <p><%= link_to @user.followings.count, followings_user_path(@user) %>フォロー <%= link_to @user.followers.count, followers_user_path(@user) %>フォロワー</p>
-        <% if @user == current_user %>
+        <% if (@user == current_user) && !(@user.name == "GuestUser") %>
           <p><%= link_to "プロフィール編集", edit_user_path(current_user.id), class: "btn btn btn-secondary" %></p>
         <% end %>
         <div id="follow_btn_<%= @user.id %>">
