@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :name, presence: true, length: { minimum: 1, maximum: 20 }
+  validates :name, presence: true, length: { minimum: 2, maximum: 20 }
   validates :gameid, length: { maximum: 50 }
   validates :voicechat, length: { maximum: 50 }
   validates :playstyle, length: { maximum: 50 }

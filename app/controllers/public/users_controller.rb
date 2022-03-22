@@ -4,8 +4,14 @@ class Public::UsersController < ApplicationController
 
   def index
     @users = User.all.order(created_at: :desc).page(params[:page]).per(10)
-    @q = User.ransack(params[:q])
-    @searches = @q.result(distinct: true)
+
+    @q = User.ransack(params[:q]) #query
+
+    if params[:q].blank? || params[:q][:name_cont].blank? # true/false
+      @searches = nil
+    else
+      @searches = @q.result(distinct: true)
+    end
   end
 
   def show
@@ -20,7 +26,7 @@ class Public::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to user_path(@user.id)
+    redirect_to user_path(@user.id), notice: "プロフィールが更新されました。"
   end
 
   def followings

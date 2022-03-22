@@ -32,7 +32,9 @@
             <div id="favorite_btn_<%= post.id %>">
               <%= render partial: "public/favorites/favorite", locals: { post: post } %>
             </div>
-            <p><i class="fas fa-comment-dots"></i><%= link_to "#{post.comments.count}コメント", post_path(post.id) %></p>
+            <div class="mx-2">
+              <i class="fas fa-comment-dots"></i><%= link_to "#{post.comments.count}コメント", post_path(post.id), class: "text-dark" %>
+            </div>
           </div>
           <div class="bottom_right">
             <p>投稿日：<%= post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
@@ -45,4 +47,3 @@
     </div>
   </div>
 </div>
-
