@@ -2,19 +2,28 @@
   <div class="row justify-content-center">
     <div class="col-10 mt-5">
       <h2><i class="fab fa-readme"></i>投稿詳細</h2>
-      <div>
-        <p>募集タイトル</p>
-        <%= @post.title %>
-        <p>募集文</p>
-        <p><%= @post.caption %></p>
-        <p>
-          <%= link_to user_path(@post.user.id) do %>
-            <%= @post.user.name %>
-          <% end %>
-        </p>
+
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="col-3">募集ユーザー</th>
+            <td class="col-9"><%= link_to user_path(@post.user.id) do %><%= @post.user.name %><% end %></td>
+          </tr>
+          <tr>
+            <th class="col-3">募集タイトル</th>
+            <td class="col-9"><%= @post.title %></td>
+          </tr>
+          <tr>
+            <th class="col-3">募集内容</th>
+            <td class="col-9"><%= @post.caption %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class= "d-flex justify-content-center my-5">
         <% if @post.user == current_user %>
-          <%= link_to "編集する", edit_post_path(@post.id) %>
-          <%= link_to "削除する", post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+          <%= link_to "編集する", edit_post_path(@post.id), class: "btn btn btn-secondary" %>
+          <%= link_to "削除する", post_path(@post.id), class: "btn btn btn-danger", method: :delete, "data-confirm" => "本当に削除しますか？" %>
         <% end %>
       </div>
       <div id="favorite_btn_<%= @post.id %>">
@@ -23,9 +32,9 @@
       <table class="table text-center">
         <p>コメント<%= @post.comments.count %>件</p>
         <div id="comment_area">
-        <% @post.comments.each do |comment| %>
-        <%= render partial: "public/comments/comment", locals: { comment: comment } %>
-        <% end %>
+          <% @post.comments.each do |comment| %>
+            <%= render partial: "public/comments/comment", locals: { comment: comment } %>
+          <% end %>
         </div>
       </table>
       <div id="comment_btn_<%=@comment.id %>">

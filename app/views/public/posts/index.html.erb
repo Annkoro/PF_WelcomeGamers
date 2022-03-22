@@ -14,9 +14,10 @@
       </div>
       <div class="card-main">
         <%= link_to post_path(post.id) do %>
-          <p>募集タイトル</p>
-          <%= post.title %>
-          <p>募集文</p>
+          <div class="post_title">
+            <%= post.title %>
+          </div>
+          <!--<p>募集文</p>-->
           <p><%= post.caption %></p>
           <p>ユーザーネーム：<%= post.user.name %></p>
           <p><%= link_to "#{post.comments.count} コメント", post_path(post.id) %></p>

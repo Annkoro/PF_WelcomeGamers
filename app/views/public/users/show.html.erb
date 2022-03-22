@@ -26,38 +26,40 @@
         </div>
       </div>
 
-      <table class="table">
-        <tbody>
-          <tr>
-            <th>性別</th>
-            <td><%= @user.gender %></td>
-          </tr>
-          <tr>
-            <th>ゲームID</th>
-            <td><%= @user.gameid %></td>
-          </tr>
-          <tr>
-            <th>使用機種</th>
-            <td><%= @user.device %></td>
-          </tr>
-          <tr>
-            <th>ボイスチャット</th>
-            <td><%= @user.voicechat %></td>
-          </tr>
-          <tr>
-            <th>プレイスタイル</th>
-            <td><%= @user.playstyle %></td>
-          </tr>
-          <tr>
-            <th>プレイ時間帯</th>
-            <td><%= @user.playtime %></td>
-          </tr>
-          <tr>
-            <th>自己紹介文</th>
-            <td><%= @user.caption %></td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="row">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th class="col-3">性別</th>
+              <td class="col-9"><%= @user.gender %></td>
+            </tr>
+            <tr>
+              <th class="col-3">ゲームID</th>
+              <td class="col-9"><%= @user.gameid %></td>
+            </tr>
+            <tr>
+              <th class="col-3">使用機種</th>
+              <td class="col-9"><%= @user.device %></td>
+            </tr>
+            <tr>
+              <th class="col-3">ボイスチャット</th>
+              <td class="col-9"><%= @user.voicechat %></td>
+            </tr>
+            <tr>
+              <th class="col-3">プレイスタイル</th>
+              <td class="col-9"><%= @user.playstyle %></td>
+            </tr>
+            <tr>
+              <th class="col-3">プレイ時間帯</th>
+              <td class="col-9"><%= @user.playtime %></td>
+            </tr>
+            <tr>
+              <th class="col-3">自己紹介文</th>
+              <td class="text-break"><%= @user.caption %></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
         <% @posts.each do |post| %>
           <%= link_to post_path(post.id) do %>
