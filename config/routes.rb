@@ -1,21 +1,20 @@
 Rails.application.routes.draw do
-
-  #ログイン前トップ画面
+  # ログイン前トップ画面
   root to: "homes#top"
 
-  #顧客用（登録とログインのみ）
-  #URL /users/sign_in ...
+  # 顧客用（登録とログインのみ）
+  # URL /users/sign_in ...
   devise_for :users, skip: [:passwords], controllers: {
     registrations: "public/registrations",
-    sessions: "public/sessions"
+    sessions: "public/sessions",
   }
-  #管理者用（ログインのみ）
-  #URL /admin/sign_in ...
+  # 管理者用（ログインのみ）
+  # URL /admin/sign_in ...
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
-    sessions: "admin/sessions"
+    sessions: "admin/sessions",
   }
 
-  #ユーザー側のURLにはpublicはつかない
+  # ユーザー側のURLにはpublicはつかない
   scope module: :public do
     resources :posts do
       resources :comments, only: [:create, :destroy]
@@ -33,13 +32,11 @@ Rails.application.routes.draw do
     end
   end
 
-
-  #管理者側のURLにadminをつける
+  # 管理者側のURLにadminをつける
   namespace :admin do
     resources :users, only: [:index, :show, :destroy]
     resources :posts, only: [:index, :show, :destroy] do
       resources :comments, only: [:destroy]
     end
-
   end
 end
