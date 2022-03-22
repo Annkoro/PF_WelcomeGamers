@@ -27,6 +27,9 @@ Rails.application.routes.draw do
         get 'followings'
         get 'followers'
       end
+      collection do
+        get 'search'
+      end
     end
   end
 
