@@ -2,12 +2,18 @@ Rails.application.routes.draw do
   # ログイン前トップ画面
   root to: "homes#top"
 
+  # ゲストログイン
+  devise_scope :user do
+    post 'guests/guest_sign_in', to: 'guests/sessions#guest_sign_in'
+  end
+
   # 顧客用（登録とログインのみ）
   # URL /users/sign_in ...
   devise_for :users, skip: [:passwords], controllers: {
     registrations: "public/registrations",
     sessions: "public/sessions",
   }
+
   # 管理者用（ログインのみ）
   # URL /admin/sign_in ...
   devise_for :admin, skip: [:registrations, :passwords], controllers: {
