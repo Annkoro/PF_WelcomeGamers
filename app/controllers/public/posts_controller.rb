@@ -16,7 +16,7 @@ class Public::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.page(params[:page]).per(3)
+    @posts = Post.all.order(created_at: :desc).page(params[:page]).per(3)
     # @q = Post.ransack(params[:q])
     # @searches = @q.result.(distinct: true)
   end
