@@ -1,6 +1,6 @@
 class Admin::PostsController < ApplicationController
   def index
-    @posts = Post.page(params[:page]).per(3)
+    @posts = Post.all.order(created_at: :desc).page(params[:page]).per(3)
   end
 
   def show

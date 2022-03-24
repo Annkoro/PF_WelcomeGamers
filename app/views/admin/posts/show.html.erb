@@ -30,11 +30,10 @@
           </tr>
         </tbody>
       </table>
-      <div>>
-        <%= link_to "削除する", admin_post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+      <div class="text-center">
+        <%= link_to "削除する", admin_post_path(@post.id), class: "btn btn-lg btn-danger", method: :delete, "data-confirm" => "本当に削除しますか？" %>
       </div>
-
-
+      <p><i class="far fa-heart"></i><%= @post.favorites.count %> いいね</p>
       <table class="table text-center">
         <p>コメント<%= @post.comments.count %>件</p>
         <% @post.comments.each do |comment| %>

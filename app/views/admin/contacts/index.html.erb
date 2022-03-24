@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10 mt-5">
+      <h2><i class="fas fa-envelope"></i>お問い合わせ一覧</h2>
+      <table class="table text-center">
+         <% @contacts.each do |contact| %>
+         <tr>
+          <th>お問い合わせ件名</th>
+          <td>
+            <%= link_to admin_contact_path(contact.id) do %>
+              <%= contact.subject %>
+            <% end %>
+          </td>
+         </tr>
+        <% end %>
+      </table>
+
+
+
+      <%= paginate @contacts %>
+    </div>
+  </div>
+</div>
