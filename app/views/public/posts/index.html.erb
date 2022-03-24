@@ -19,7 +19,10 @@
         <% else %>
           <%= image_tag 'no_image', size: "80x80", class: "rounded-circle" %>
         <% end %><br>
-        <%= post.user.name %>
+        <div class="text-position" %>
+          <%= post.user.name %><br>
+          <%#= post.user.gender_i18n %>
+        </div>
       </div>
 
       <div class="card-main">
