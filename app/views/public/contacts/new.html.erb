@@ -3,20 +3,26 @@
     <h2 class="text-center mb-4"><i class="fas fa-question"></i>お問い合わせフォーム</h2>
 
 
-      <%= form_for(@contact, url: confirm_path) do |f| %>
+      <%#= form_for(@contact, url: confirm_path) do |f| %>
+      <%= form_with model: @contact do |f| %>
         <div class="form-group">
-          <%= f.label :name, 'お名前*' %>
+          <%= f.label :name, "お名前" %>
           <%= f.text_field :name, autofocus: true, class: 'form-control' %>
         </div>
 
         <div class="form-group">
-          <%= f.label :email, '返信先メールアドレス*' %>
+          <%= f.label :email, "返信先メールアドレス" %>
           <%= f.email_field :email, class: 'form-control' %>
         </div>
 
         <div class="form-group">
-          <%= f.label :message, 'メッセージ*' %>
-          <%= f.text_area :message, size: '10x10', class: 'form-control' %>
+          <%= f.label :subject, "お問い合わせ件名" %>
+          <%= f.text_field :subject, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :message, "お問い合わせ内容" %>
+          <%= f.text_area :message, size: "10x10", class: 'form-control' %>
         </div>
 
         <div>

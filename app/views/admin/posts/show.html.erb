@@ -2,13 +2,35 @@
   <div class="row justify-content-center">
     <div class="col-10 mt-5">
       <h2><i class="fab fa-readme"></i>投稿詳細</h2>
-      <div>
-        <p>募集タイトル</p>
-        <%= @post.title %>
-        <p>募集文</p>
-        <p><%= @post.caption %></p>
-        <p><%= link_to user_path(@post.user.id) do %><%= @post.user.name %><% end %></p>
-        <p><i class="fas fa-heart"></i><%= @post.favorites.count %> いいね</p>
+       <table class="table">
+        <tbody>
+          <tr>
+            <th class="col-3">募集ユーザー</th>
+            <td class="col-9"><%= link_to user_path(@post.user.id) do %><%= @post.user.name %><% end %></td>
+          </tr>
+          <tr>
+            <th class="col-3">募集タイトル</th>
+            <td class="col-9"><%= @post.title %></td>
+          </tr>
+          <tr>
+            <th class="col-3">募集内容</th>
+            <td class="col-9"><%= @post.caption %></td>
+          </tr>
+          <tr>
+            <th class="col-3">使用機種</th>
+            <td class="col-9"><%= @post.user.device %></td>
+          </tr>
+          <tr>
+            <th class="col-3">投稿日時</th>
+            <td class="col-9"><%= @post.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+          </tr>
+          <tr>
+            <th class="col-3">更新日時</th>
+            <td class="col-9"><%= @post.updated_at.strftime('%Y/%m/%d %H:%M') %></td>
+          </tr>
+        </tbody>
+      </table>
+      <div>>
         <%= link_to "削除する", admin_post_path(@post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
       </div>
 
