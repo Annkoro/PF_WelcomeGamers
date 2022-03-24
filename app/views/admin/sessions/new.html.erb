@@ -2,7 +2,7 @@
   <div class="col-6 offset-3">
     <h2 class="text-center mb-4"><i class="fas fa-sign-in-alt"></i>管理者ログイン</h2>
     <%#= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <%= form_with model: @user, url: admin_session_path do |f| %>
+    <%= form_with model: @admin, url: admin_session_path do |f| %>
       <div class="form-group">
         <div class="field">
           <%= f.label :email, "メールアドレス" %><br />
@@ -25,5 +25,4 @@
     <% end %>
   </div>
 </div>
-
 <%#= render "admin/shared/links" %>
