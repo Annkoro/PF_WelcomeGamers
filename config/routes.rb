@@ -36,10 +36,9 @@ Rails.application.routes.draw do
         get 'search'
       end
     end
-    resources :contacts: only: [:new] do
-      post 'contact/confirm' => 'contact#confirm'
-     post 'contact/thanks' => 'contact#thanks'
-
+    resource :contacts, only: [:new] do
+        post 'contact/confirm' => 'contact#confirm'
+        post 'contact/thanks' => 'contact#thanks'
     end
   end
 
