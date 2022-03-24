@@ -36,6 +36,11 @@ Rails.application.routes.draw do
         get 'search'
       end
     end
+    resources :contacts: only: [:new] do
+      post 'contact/confirm' => 'contact#confirm'
+     post 'contact/thanks' => 'contact#thanks'
+
+    end
   end
 
   # 管理者側のURLにadminをつける
