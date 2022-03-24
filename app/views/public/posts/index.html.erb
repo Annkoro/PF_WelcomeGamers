@@ -3,13 +3,11 @@
     <div class="col-10 mt-5">
     <h2><i class="fas fa-handshake"></i>募集一覧ページ</h2>
 
-
     <%#= search_form_for @q do |f| %>
       <%#= f.label :name_cont %>
       <%#= f.search_field :name_cont %>
       <%#= f.submit "検索する", class: "btn btn-info" %>
     <%# end %>
-
 
     <% @posts.each do |post| %>
     <div class="card-wrapper">
@@ -19,7 +17,10 @@
         <% else %>
           <%= image_tag 'no_image', size: "80x80", class: "rounded-circle" %>
         <% end %><br>
-        <%= post.user.name %>
+        <div class="text-position" %>
+          <%= post.user.name %><br>
+          <%#= post.user.gender_i18n %>
+        </div>
       </div>
 
       <div class="card-main">

@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  enum gender: {man: 0, woman: 1, secret: 2}
+
   validates :name, presence: true, length: { minimum: 2, maximum: 20 }
   validates :gameid, length: { maximum: 50 }
   validates :voicechat, length: { maximum: 50 }

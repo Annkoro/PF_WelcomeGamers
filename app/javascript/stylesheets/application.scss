@@ -22,11 +22,16 @@
   }
   .profile-image {
     padding: 16px;
-    padding-top: 32px;
-    flex-basis: 18%
+    padding-top: 5%;
+    flex-basis: 20%
   }
+
+  .text-position {
+    padding-left: 18%;
+  }
+
   .card-main {
-    flex-basis: 82%;
+    flex-basis: 80%;
   }
 
   .title {
@@ -49,7 +54,6 @@
 
   .notification{
     .notice {
-      // background-color: silver;
-      color: lime;
+      color: green;
     }
   }

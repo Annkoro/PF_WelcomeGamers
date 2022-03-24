@@ -7,7 +7,7 @@
         <h2><i class="fas fa-user"></i>プロフィール</h2>
       <% end %>
       <div class="notification">
-        <p class="notice"><%= notice %></p>
+        <h5 class="notice"><%= notice %></h5>
       </div>
     <div class="text-center">
       <div>
@@ -33,7 +33,7 @@
           <tbody>
             <tr>
               <th class="col-3">性別</th>
-              <td class="col-9"><%= @user.gender %></td>
+              <td class="col-9"><%= @user.gender_i18n %></td>
             </tr>
             <tr>
               <th class="col-3">ゲームID</th>
