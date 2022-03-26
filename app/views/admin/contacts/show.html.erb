@@ -2,7 +2,28 @@
   <div class="row justify-content-center">
     <div class="col-10 mt-5">
       <h2><i class="fas fa-bug"></i>お問い合わせ詳細</h2>
-
+        <div class="row">
+          <table class="table">
+            <tbody>
+              <tr>
+                <th class="text-center">お名前</th>
+                <td><%= @contact.name %></td>
+              </tr>
+              <tr>
+                <th class="text-center">メールアドレス</th>
+                <td><%= @contact.email %></td>
+              </tr>
+              <tr>
+                <th class="text-center">お問い合わせ件名</th>
+                <td><%= @contact.subject %></td>
+              </tr>
+              <tr>
+                <th class="text-center">お問い合わせ内容</th>
+                <td class="text-break"><%= @contact.message %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>

@@ -11,8 +11,9 @@
 
         <% if @searches.present? %>
           <% @searches.each do |search| %>
-            <%= search.id %>.
+            <%= search.id %>：
             <%= link_to user_path(search.id) do %><%= search.name %><% end %>
+            <%#= search.count　%>
           <% end %>
         <% else %>
           <p>検索結果はありません</p>

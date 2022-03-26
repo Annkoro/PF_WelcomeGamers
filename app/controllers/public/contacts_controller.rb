@@ -1,5 +1,5 @@
 class Public::ContactsController < ApplicationController
-
+  before_action :authenticate_user!
   def new
     @contact = Contact.new
   end
@@ -32,7 +32,6 @@ class Public::ContactsController < ApplicationController
   # 送信完了画面
   def thanks
   end
-
 
   private
 

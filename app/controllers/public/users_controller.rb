@@ -5,7 +5,7 @@ class Public::UsersController < ApplicationController
   def index
     @users = User.all.order(created_at: :desc).page(params[:page]).per(10)
 
-    @q = User.ransack(params[:q]) #query
+    @q = User.ransack(params[:q])
 
     if params[:q].blank? || params[:q][:name_cont].blank? # true/false
       @searches = nil

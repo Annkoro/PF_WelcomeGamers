@@ -11,12 +11,12 @@
               <%= contact.subject %>
             <% end %>
           </td>
+          <td>送信日：
+            <%= contact.created_at.strftime('%Y/%m/%d %H:%M') %>
+          </td>
          </tr>
         <% end %>
       </table>
-
-
-
       <%= paginate @contacts %>
     </div>
   </div>

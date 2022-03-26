@@ -13,9 +13,9 @@
     <div class="card-wrapper">
       <div class="profile-image">
         <% if post.user.profile_image.attached? %>
-          <%= image_tag post.user.profile_image, size: "80x80", class: "rounded-circle" %>
+          <%= image_tag post.user.profile_image, size: "90x90", class: "rounded-circle" %>
         <% else %>
-          <%= image_tag 'no_image', size: "80x80", class: "rounded-circle" %>
+          <%= image_tag 'no_image', size: "90x90", class: "rounded-circle" %>
         <% end %><br>
         <div class="text-position" %>
           <%= post.user.name %><br>
