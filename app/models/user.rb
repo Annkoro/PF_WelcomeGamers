@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   enum gender: { man: 0, woman: 1, secret: 2 }
 
-  validates :email, on: :create, presence: true, length: { minimum: 6, maximum: 30}
+  validates :email, on: :create, presence: true, uniqueness: true, length: { minimum: 6, maximum: 30}
   validates :password, on: :create, presence: true, length: { minimum: 6, maximum: 20}
   validates :name, presence: true, length: { minimum: 2, maximum: 20 }
   validates :gameid, length: { maximum: 50 }
