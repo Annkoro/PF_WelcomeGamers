@@ -18,7 +18,6 @@
 
 #   # @request.env["devise.mapping"] = Devise.mappings[:customer_user]
 
-
 #   describe 'sessions#create' do
 #     context "ログインが成功した場合" do
 #       it 'ユーザー名が同じであること' do
