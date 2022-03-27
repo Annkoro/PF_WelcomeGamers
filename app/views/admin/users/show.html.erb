@@ -21,31 +21,49 @@
         <p><%= link_to "ユーザーの削除", admin_user_path(@user.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn btn-danger" %></p>
       </div>
 
-      <table class="table">
-        <tbody>
-          <tr>
-            <th>性別</th>
-            <td><%= @user.gender %></td>
-          </tr>
-          <tr>
-            <th>機種</th>
-            <td><%= @user.device %></td>
-          </tr>
-          <tr>
-            <th>VCの有無</th>
-            <td><%#= @user.vc %></td>
-          </tr>
-        </tbody>
-      </table>
-
-        <% @posts.each do |post| %>
-          <%= link_to post_path(post.id) do %>
-          <p>募集タイトル：<%= post.title %></p>
-          <!--<p>募集文：<%#= post.caption %></p>-->
-        <% end %>
-        <% end %>
+      <div class="row">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th class="col-3">性別</th>
+              <td class="col-9"><%= @user.gender_i18n %></td>
+            </tr>
+            <tr>
+              <th class="col-3">ゲームID</th>
+              <td class="col-9"><%= @user.gameid %></td>
+            </tr>
+            <tr>
+              <th class="col-3">使用機種</th>
+              <td class="col-9"><%= @user.device %></td>
+            </tr>
+            <tr>
+              <th class="col-3">ボイスチャット</th>
+              <td class="col-9"><%= @user.voicechat %></td>
+            </tr>
+            <tr>
+              <th class="col-3">プレイスタイル</th>
+              <td class="col-9"><%= @user.playstyle %></td>
+            </tr>
+            <tr>
+              <th class="col-3">プレイ時間帯</th>
+              <td class="col-9"><%= @user.playtime %></td>
+            </tr>
+            <tr>
+              <th class="col-3">自己紹介文</th>
+              <td class="text-break"><%= @user.caption %></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
+      <% @posts.each do |post| %>
+        <%= link_to post_path(post.id) do %>
+        <p>募集タイトル：<%= post.title %></p>
+        <!--<p>募集文：<%#= post.caption %></p>-->
+        <% end %>
+      <% end %>
+      <%= paginate @posts %>
+      </div>
     </div>
    </div>
   </div>

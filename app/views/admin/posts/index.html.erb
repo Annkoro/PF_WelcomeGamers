@@ -3,6 +3,14 @@
     <div class="col-10 mt-5">
     <h2><i class="fas fa-handshake"></i>募集一覧ページ</h2>
 
+
+    <%#= search_form_for @q do |f| %>
+      <%#= f.label :name_cont %>
+      <%#= f.search_field :name_cont %>
+      <%#= f.submit "検索する", class: "btn btn-info" %>
+    <%# end %>
+
+
     <% @posts.each do |post| %>
     <div class="card-wrapper">
       <div class="profile-image">
@@ -10,17 +18,26 @@
           <%= image_tag post.user.profile_image, size: "80x80", class: "rounded-circle" %>
         <% else %>
           <%= image_tag 'no_image', size: "80x80", class: "rounded-circle" %>
-        <% end %>
+        <% end %><br>
+        <div class="text-position" %>
+          <%= post.user.name %>
+        </div>
       </div>
+
       <div class="card-main">
         <%= link_to admin_post_path(post.id) do %>
-          <p>募集タイトル</p>
-          <%= post.title %>
-          <p>募集文</p>
-          <p><%= post.caption %></p>
-          <p>ユーザーネーム：<%= post.user.name %></p>
-          <p><%= "#{post.comments.count} コメント" %></p>
-          <p><i class="fas fa-heart"></i><%= post.favorites.count %> いいね</p>
+          <div class="post_title">
+            <p class="badge badge-pill badge-success"><%= post.title %></p>
+          </div>
+            <p class="text-dark"><%= post.caption %></p>
+          <div class="d-flex">
+            <div class="mw-2">
+              <i class="far fa-heart"></i><%= post.favorites.count %> いいね
+            </div>
+            <div class="mx-2">
+              <i class="fas fa-comment-dots"></i><%= link_to "#{post.comments.count}コメント", post_path(post.id), class: "text-dark" %>
+            </div>
+          </div>
           <div class="bottom_right">
             <p>投稿日：<%= post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
           </div>

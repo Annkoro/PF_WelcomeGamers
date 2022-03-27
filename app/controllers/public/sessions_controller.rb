@@ -13,8 +13,7 @@ class Public::SessionsController < Devise::SessionsController
     root_path
   end
 
-  #呼び出された他のコントローラーからも参照できる
-  protected
+  # 呼び出された他のコントローラーからも参照できる
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])

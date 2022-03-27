@@ -6,7 +6,9 @@
       <% else %>
         <h2><i class="fas fa-user"></i>プロフィール</h2>
       <% end %>
-
+      <div class="notification">
+        <h5 class="notice"><%= notice %></h5>
+      </div>
     <div class="text-center">
       <div>
         <% if @user.profile_image.attached? %>
@@ -18,43 +20,56 @@
       </div>
       <div>
         <p><%= link_to @user.followings.count, followings_user_path(@user) %>フォロー <%= link_to @user.followers.count, followers_user_path(@user) %>フォロワー</p>
-        <% if @user == current_user %>
+        <% if (@user == current_user) && !(@user.name == "GuestUser") %>
           <p><%= link_to "プロフィール編集", edit_user_path(current_user.id), class: "btn btn btn-secondary" %></p>
         <% end %>
-         <% if current_user != @user %>
-          <% if @user.followed_by?(current_user) %>
-            <p><%= link_to "フォローを外す", user_relationships_path(@user.id), class: "btn btn btn-success", method: :delete %></p>
-          <% else %>
-            <p><%= link_to "フォローする", user_relationships_path(@user.id), class: "btn btn-outline-secondary", method: :post %></p>
-          <% end %>
-        <% end %>
+        <div id="follow_btn_<%= @user.id %>">
+          <%= render partial: "public/relationships/follow", locals: {user: @user} %>
+        </div>
       </div>
 
-      <table class="table">
-        <tbody>
-          <tr>
-            <th>性別</th>
-            <td><%= @user.gender %></td>
-          </tr>
-          <tr>
-            <th>機種</th>
-            <td><%= @user.device %></td>
-          </tr>
-          <tr>
-            <th>VCの有無</th>
-            <td><%#= @user.vc %></td>
-          </tr>
-        </tbody>
-      </table>
-
-        <% @posts.each do |post| %>
-          <%= link_to post_path(post.id) do %>
-          <p>募集タイトル：<%= post.title %></p>
-          <!--<p>募集文：<%#= post.caption %></p>-->
-        <% end %>
-        <% end %>
+      <div class="row">
+        <table class="table">
+          <tbody>
+            <tr>
+              <th class="col-3">性別</th>
+              <td class="col-9"><%= @user.gender_i18n %></td>
+            </tr>
+            <tr>
+              <th class="col-3">ゲームID</th>
+              <td class="col-9"><%= @user.gameid %></td>
+            </tr>
+            <tr>
+              <th class="col-3">使用機種</th>
+              <td class="col-9"><%= @user.device %></td>
+            </tr>
+            <tr>
+              <th class="col-3">ボイスチャット</th>
+              <td class="col-9"><%= @user.voicechat %></td>
+            </tr>
+            <tr>
+              <th class="col-3">プレイスタイル</th>
+              <td class="col-9"><%= @user.playstyle %></td>
+            </tr>
+            <tr>
+              <th class="col-3">プレイ時間帯</th>
+              <td class="col-9"><%= @user.playtime %></td>
+            </tr>
+            <tr>
+              <th class="col-3">自己紹介文</th>
+              <td class="text-break"><%= @user.caption %></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
 
+      <% @posts.each do |post| %>
+        <%= link_to post_path(post.id) do %>
+        <p>募集タイトル：<%= post.title %></p>
+        <!--<p>募集文：<%#= post.caption %></p>-->
+        <% end %>
+      <% end %>
+      <%= paginate @posts %>
     </div>
    </div>
   </div>

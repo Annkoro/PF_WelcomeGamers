@@ -15,6 +15,9 @@
     <% if user_signed_in? || admin_signed_in? %>
       <%= render 'layouts/header' %>
     <% end %>
+    <!--<div class="notification">-->
+    <!--  <h5 class="notice"><%#= notice %></h5>-->
+    <!--</div>-->
     <%= yield %>
     <%= render 'layouts/footer' %>
   </body>

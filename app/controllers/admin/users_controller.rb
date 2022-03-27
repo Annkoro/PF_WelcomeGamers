@@ -1,12 +1,11 @@
 class Admin::UsersController < ApplicationController
-
   def index
     @users = User.page(params[:page]).per(10)
   end
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts
+    @posts = @user.posts.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def edit
@@ -40,6 +39,4 @@ class Admin::UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :caption, :profile_image, :gender, :device)
   end
-
-
 end

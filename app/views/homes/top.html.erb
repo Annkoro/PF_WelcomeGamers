@@ -1,43 +1,25 @@
-<div class="row mt-5">
-  <div class="col-6 offset-3">
-    <h1 class="text-center mb-4">WelcomeGamers!</h1>
-    <div class="text-center">
-      <h5>気の合う仲間たちと快適なゲームライフを！</h5>
-    </div>
-    <h2 class= "text-center">About us</h2><br>
-      <div class= "row">
-        <div class="col text-center">
-          <p>当サイトではユーザー同士がプロフィールを閲覧することができるため、<br class="d-sm-none">募集ユーザーの詳細な情報が分かります。
-          <br>また、自身のプロフィールを詳細に記述することで、<br class="d-sm-none">ミスマッチを減らすことができます。</p>
-        </div>
-      </div>
-      <div class='container'>
-        <div class='row'>
-          <div class= 'col-2'></div>
-            <div class= 'col-8 d-flex align-items-center justify-content-center'>
-              <div class= 'text-left lead px-4 py-5'>
-              <p>
-                ようこそ、WelcomeGamers!へ</br>
-                このサイトは、ゲームフレンド募集を目的としております。</br>
-                会員登録されていない方は個人情報の保護の観点から</br>
-                当サイトをご利用になれませんのでご了承ください。
-              </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class= "container-fluid">
+  <div class="top-image d-flex flex-column justify-content-center align-items-center">
+    <h1 class="title">WelcomeGamers!</h1>
+    <h3 class="discription">気の合う仲間たちと快適なゲームライフを！</h3>
+  </div>
+  <h2 class= "text-center">About us</h2><br>
+  <div class= "row">
+    <div class="col text-center">
+      <p>当サイトではユーザー同士がプロフィールを閲覧することができるため、<br class="d-sm-none">募集ユーザーの詳細な情報が分かります。
+      <br>また、自身のプロフィールを詳細に記述することで、<br class="d-sm-none">ミスマッチを減らすことができます。</p>
     </div>
   </div>
+</div>
 
   <% if user_signed_in? %>
 
   <% elsif admin_signed_in? %>
 
   <% else %>
-  <div class= "d-flex justify-content-center my-5">
-    <%= link_to "新規登録", new_user_registration_path, class: "btn btn-lg btn-primary" %>
-    <%= link_to "ログイン", new_user_session_path, class: "btn btn-lg btn-success" %>
-  </div>
-
+    <div class= "d-flex justify-content-center my-5">
+      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-lg btn-primary mx-2" %>
+      <%= link_to "ログイン", new_user_session_path, class: "btn btn-lg btn-success mx-2" %>
+      <%= link_to "ゲストログイン", guests_guest_sign_in_path, class: "btn btn-lg btn-info", method: :post %>
+    </div>
   <% end %>
