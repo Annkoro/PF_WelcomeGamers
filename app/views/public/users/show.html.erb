@@ -63,14 +63,13 @@
         </table>
       </div>
 
-        <% @posts.each do |post| %>
-          <%= link_to post_path(post.id) do %>
-          <p>募集タイトル：<%= post.title %></p>
-          <!--<p>募集文：<%#= post.caption %></p>-->
+      <% @posts.each do |post| %>
+        <%= link_to post_path(post.id) do %>
+        <p>募集タイトル：<%= post.title %></p>
+        <!--<p>募集文：<%#= post.caption %></p>-->
         <% end %>
-        <% end %>
-      </div>
-
+      <% end %>
+      <%= paginate @posts %>
     </div>
    </div>
   </div>
