@@ -8,6 +8,6 @@
 
 
 Admin.create(
-              email: "WelcomeGamers@gmail.com",
-              password: "WelcomeGamers"
+              email: "welcomegamers@gmail.com",
+              password: "welcomegamers"
             )
