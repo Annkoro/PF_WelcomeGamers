@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe "Userモデルに関するテスト", type: :modil do
+RSpec.describe "Userモデルに関するテスト", type: :model do
 
   describe "基本機能のテスト" do
     it "新規登録ができる" do
@@ -10,6 +10,38 @@ RSpec.describe "Userモデルに関するテスト", type: :modil do
       expect(FactoryBot.build(:user)).to be_valid
     end
   end
+
+  # describe "ログイン機能" do
+  #   before do
+  #     @user = FactoryBot.create(:user)
+
+  #      post :create, params: {
+  #        session: {
+  #          email: @user.email,
+  #         password: @user.password
+  #       }
+  #      }
+  #   end
+  #     context "ログインが成功したとき" do
+  #       it "マイページにリダイレクト" do
+  #         expect(response).to redirect_to(user_path)
+  #       end
+  #     end
+  # end
+
+  # describe "新規登録のテスト" do
+  #   describe "新規登録成功のテスト" do
+  #     before do
+  #       fill_in 'user[name]', with: Faker::Lorem.characters(number: 10)
+  #       fill_in 'user[email]', with: Faker::Internet.email
+  #       fill_in 'user[password]', with: 'password'
+  #       fill_in 'user[password_confirmation]', with: 'password'
+  #     end
+  #     it '正しく新規登録される' do
+  #       expect { click_button 'ログイン' }.to change(User.all, :count).by(1)
+  #     end
+  #   end
+  # end
 
   describe "アソシエーションのテスト" do
     context "Postモデルとの関係" do
@@ -32,8 +64,6 @@ RSpec.describe "Userモデルに関するテスト", type: :modil do
         expect(User.reflect_on_association(:contacts).macro).to eq :has_many
       end
     end
-    # context "Relationshipモデルとの関係" do
-    #   it
   end
 
   describe "バリデーションのテスト" do
