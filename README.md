@@ -48,4 +48,5 @@
 
 ## 使用素材
 - ロゴ：Font Awesome "https://fontawesome.com/kits/fa1e667fcf/use?welcome=yes"
-- 画像：illustAC "https://www.ac-illust.com/", いらすとや "https://www.irasutoya.com/""
+- 画像：illustAC "https://www.ac-illust.com/"
+  - いらすとや "https://www.irasutoya.com/"
