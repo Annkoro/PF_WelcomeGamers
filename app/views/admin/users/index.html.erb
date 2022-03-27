@@ -7,9 +7,9 @@
           <tr>
             <td>
               <% if user.profile_image.attached? %>
-                <%= image_tag user.profile_image, size: "150x150", class: "rounded-circle" %>
+                <%= image_tag user.profile_image, size: "100x100", class: "rounded-circle" %>
               <% else %>
-                <%= image_tag 'no_image', size: "150x150", class: "rounded-circle" %>
+                <%= image_tag 'no_image', size: "100x100", class: "rounded-circle" %>
               <% end %>
             </td>
             <td>
