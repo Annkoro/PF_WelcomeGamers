@@ -60,12 +60,14 @@
 
   .post_title {
     // border-radius: 30px;
+    word-break: break-all;
     font-size: 25px;
     margin-top: 1%;
   }
 
   @media screen and (max-width: 768px) {
     .post_title {
+      word-break: break-all;
       font-size: 100%;
     }
   }
@@ -77,5 +79,6 @@
   }
 
   .post-index-position {
+    word-break: break-all;
     padding-right:10px;
   }
