@@ -69,3 +69,4 @@ end
 
 gem 'ransack'
 gem 'rubocop-airbnb'
+gem 'acts-as-taggable-on', '~> 9.0'
