@@ -14,11 +14,11 @@
         <div class="form-group">
           <div class="field">
             <%= f.label :gender, "性別" %><br>
-            <%= f.label :man, "男性" %>
+            <%= f.label :gender, "男性", value: :man %>
             <%= f.radio_button :gender, :man %>
-            <%= f.label :woman, "女性" %>
+            <%= f.label :gender, "女性", value: :woman %>
             <%= f.radio_button :gender, :woman %>
-            <%= f.label :secret, "非表示" %>
+            <%= f.label :gender, "非表示", value: :secret  %>
             <%= f.radio_button :gender, :secret %>
           </div>
         </div>
