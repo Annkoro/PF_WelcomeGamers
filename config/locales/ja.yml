@@ -7,6 +7,20 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+      # modelの日本語
+    models:
+      user: 'ユーザー'
+      post: '募集'
+    # model毎に定義したカラムを記述
+    attributes:
+        user:
+          email: 'メールアドレス'
+          password: 'パスワード'
+          name: 'ユーザーネーム'
+          gender: '性別'
+        post:
+          title: '募集タイトル'
+          caption: '募集内容'
   date:
     abbr_day_names:
     - 日
