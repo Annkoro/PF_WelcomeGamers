@@ -1,12 +1,7 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-10 mt-5">
-      <% if @user == current_user %>
-        <h2><i class="fas fa-users" %></i><%= current_user.name %>のフォロー一覧</h2>
-      <% else %>
-        <h2><i class="fas fa-users" %></i><%= @user.name %>さんがフォローしているユーザー一覧</h2>
-      <% end %>
-
+      <h2><i class="fas fa-users" %></i><%= @user.name %>さんをフォローしているユーザー一覧</h2>
       <table class="table text-center">
         <% @users.each do|user| %>
           <tr>
@@ -18,14 +13,9 @@
               <% end %>
             </td>
             <td>
-              <%= link_to user_path(user) do %>
+              <%= link_to admin_user_path(user) do %>
                 <%= user.name %>
               <% end %>
-            </td>
-            <td>
-              <div id="follow_btn_<%= user.id %>">
-                <%= render partial: "public/relationships/follow", locals: {user: user} %>
-              </div>
             </td>
           </tr>
         <% end %>
