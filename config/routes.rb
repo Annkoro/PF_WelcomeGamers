@@ -47,7 +47,12 @@ Rails.application.routes.draw do
 
   # 管理者側のURLにadminをつける
   namespace :admin do
-    resources :users, only: [:index, :show, :destroy]
+    resources :users, only: [:index, :show, :destroy] do
+      member do
+          get 'followings'
+          get 'followers'
+      end
+    end
     resources :posts, only: [:index, :show, :destroy] do
       resources :comments, only: [:destroy]
     end

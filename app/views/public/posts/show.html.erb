@@ -45,6 +45,14 @@
       </div>
       <table class="table text-center">
         <p>コメント<%= @post.comments.count %>件</p>
+        <% if @post.errors.any? %>
+          <%= @post.errors.count %>件のエラーが発生しました
+          <ul>
+            <% @post.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
         <div id="comment_area">
           <% @post.comments.each do |comment| %>
             <%= render partial: "public/comments/comment", locals: { comment: comment } %>

@@ -11,6 +11,8 @@ ja:
     models:
       user: 'ユーザー'
       post: '募集'
+      comment: 'コメント'
+      contact: 'お問い合わせ'
     # model毎に定義したカラムを記述
     attributes:
         user:
@@ -21,6 +23,13 @@ ja:
         post:
           title: '募集タイトル'
           caption: '募集内容'
+        comment:
+          comment: 'コメント'
+        contact:
+          name: '名前'
+          email: 'メールアドレス'
+          subject: 'お問い合わせ件名'
+          message: 'お問い合わせ内容'
   date:
     abbr_day_names:
     - 日

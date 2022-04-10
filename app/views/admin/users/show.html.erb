@@ -17,7 +17,7 @@
         <h4><%= @user.name %></h4>
       </div>
       <div>
-        <p><%= link_to @user.followings.count %>フォロー <%= link_to @user.followers.count %>フォロワー</p>
+        <p><%= link_to @user.followings.count, followings_admin_user_path(@user) %>フォロー <%= link_to @user.followers.count, followers_admin_user_path(@user) %>フォロワー</p>
         <p><%= link_to "ユーザーの削除", admin_user_path(@user.id), method: :delete, "data-confirm" => "本当に削除しますか？", class: "btn btn btn-danger" %></p>
       </div>
 

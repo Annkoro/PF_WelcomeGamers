@@ -1,7 +1,11 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-10 mt-5">
-      <h2><i class="fas fa-users" %></i>フォロワー一覧</h2>
+      <% if @user == current_user %>
+        <h2><i class="fas fa-users" %></i><%= current_user.name %>のフォロワー一覧</h2>
+      <% else %>
+        <h2><i class="fas fa-users" %></i><%= @user.name %>さんをフォローしているユーザー一覧</h2>
+      <% end %>
 
       <table class="table text-center">
         <% @users.each do|user| %>
