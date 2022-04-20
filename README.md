@@ -19,23 +19,17 @@
 - 固定のフレンドとして長く遊べそうな相方を求めている時。
 
 ## 設計書
-- UI Flows
-"https://drive.google.com/file/d/1styG3sCdh9hJ_OsH-YZvd7Dx5NXXfwBC/view?usp=sharing"
+- [UI Flows](https://drive.google.com/file/d/1styG3sCdh9hJ_OsH-YZvd7Dx5NXXfwBC/view?usp=sharing)
 
-- ワイヤーフレーム
-"https://drive.google.com/file/d/16Db-1UwlQ1gVLe-dzTJoN_DMHZ-UYxkQ/view?usp=sharing"
+- [ワイヤーフレーム](https://drive.google.com/file/d/16Db-1UwlQ1gVLe-dzTJoN_DMHZ-UYxkQ/view?usp=sharing)
 
-- ER図
-"https://drive.google.com/file/d/18dUIJ6e0ImgkhsFaTRexl352HR8KL2Vd/view?usp=sharing"
+- [ER図](https://drive.google.com/file/d/18dUIJ6e0ImgkhsFaTRexl352HR8KL2Vd/view?usp=sharing)
 
-- テーブル提議書
-"https://docs.google.com/spreadsheets/d/1NPTaL4rNLYnv-11fxLaGRFw4grasgpImnB9ArBpuuC0/edit?usp=sharing"
+- [テーブル提議書](https://docs.google.com/spreadsheets/d/1NPTaL4rNLYnv-11fxLaGRFw4grasgpImnB9ArBpuuC0/edit?usp=sharing)
 
-- アプリケーション詳細設計書
-"https://docs.google.com/spreadsheets/d/1C2vRQGAW9udZEUWy_1dpIPkL2F3ZWW6o8djc9EF8iYI/edit?usp=sharing"
+- [アプリケーション詳細設計書](https://docs.google.com/spreadsheets/d/1C2vRQGAW9udZEUWy_1dpIPkL2F3ZWW6o8djc9EF8iYI/edit?usp=sharing)
 
-## チャレンジ要素一覧
-"https://docs.google.com/spreadsheets/d/1d53JSh68pvfZPoLOxZhf4IcHg6uLL7ZF_TQ8ivzgHk8/edit?usp=sharing"
+## [チャレンジ要素一覧](https://docs.google.com/spreadsheets/d/1d53JSh68pvfZPoLOxZhf4IcHg6uLL7ZF_TQ8ivzgHk8/edit?usp=sharing)
 
 ## 開発環境
 - ruby 2.6.3
