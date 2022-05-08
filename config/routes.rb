@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'chats/show'
   # ログイン前トップ画面
   root to: "homes#top"
 
@@ -43,6 +44,9 @@ Rails.application.routes.draw do
         get 'thanks'
       end
     end
+    get 'chat/:id', to: 'chats#show', as: 'chat'
+    resources :chats, only: [:create]
+
   end
 
   # 管理者側のURLにadminをつける
