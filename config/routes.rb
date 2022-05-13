@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'chats/show'
   # ログイン前トップ画面
   root to: "homes#top"
 
