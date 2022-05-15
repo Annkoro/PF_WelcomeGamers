@@ -43,6 +43,7 @@ Rails.application.routes.draw do
         get 'thanks'
       end
     end
+    resources :groups
   end
 
   # 管理者側のURLにadminをつける
