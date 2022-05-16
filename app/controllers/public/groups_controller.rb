@@ -3,17 +3,15 @@ class Public::GroupsController < ApplicationController
   before_action :ensure_correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @post = Post.new
     @groups = Group.all
   end
 
   def show
-    @post = Post.new
     @group = Group.find(params[:id])
   end
 
   def join
-    @group = Group.find(params[:group_id])
+    @group = Group.find(params[:id])
     # @group.usersにcurrent_userを追加する
     @group.users << current_user
     redirect_to groups_path
@@ -21,6 +19,7 @@ class Public::GroupsController < ApplicationController
 
   def new
     @group = Group.new
+    @group.users << current_user
   end
 
   def create
@@ -28,18 +27,20 @@ class Public::GroupsController < ApplicationController
     @group.owner_id = current_user.id
     @group.users << current_user
     if @group.save
-      redirect_to groups_path
+      redirect_to groups_path, notice: "新規グループが作成されました。"
     else
       render 'new'
     end
   end
 
   def edit
+    @group = Group.find(params[:id])
   end
 
   def update
+    @group = Group.find(params[:id])
     if @group.update(group_params)
-      redirect_to groups_path
+      redirect_to groups_path, notice: "編集内容が更新されました。"
     else
       render 'edit'
     end
@@ -47,7 +48,10 @@ class Public::GroupsController < ApplicationController
 
   def destroy
     @group = Group.find(params[:id])
-    @group.users.delete(current_user)
+    @group.destroy
+    # ユーザーの退会機能
+    # @group.users.delete(current_user)
+    redirect_to groups_path, notice: "グループが削除されました。"
   end
 
   private
