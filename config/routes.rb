@@ -62,5 +62,6 @@ Rails.application.routes.draw do
       resources :comments, only: [:destroy]
     end
     resources :contacts, only: [:index, :show]
+    resources :groups, only: [:index, :show, :destroy]
   end
 end
