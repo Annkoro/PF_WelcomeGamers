@@ -30,6 +30,9 @@ ja:
           email: 'メールアドレス'
           subject: 'お問い合わせ件名'
           message: 'お問い合わせ内容'
+        group:
+          name: 'グループ名'
+          introduction: '紹介文'
   date:
     abbr_day_names:
     - 日
