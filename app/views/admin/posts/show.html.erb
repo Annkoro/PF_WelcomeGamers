@@ -6,7 +6,7 @@
         <tbody>
           <tr>
             <th class="col-3">募集ユーザー</th>
-            <td class="col-9"><%= link_to user_path(@post.user.id) do %><%= @post.user.name %><% end %></td>
+            <td class="col-9"><%= link_to admin_user_path(@post.user.id) do %><%= @post.user.name %><% end %></td>
           </tr>
           <tr>
             <th class="col-3">募集タイトル</th>

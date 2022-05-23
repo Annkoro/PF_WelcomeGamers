@@ -25,7 +25,9 @@
             <td><%= @group.introduction %></td>
             <td>
               <% @group.users.each do |member| %>
-                <%= member.name %><br>
+                <%= link_to user_path(member.id) do %>
+                  <%= member.name %><br>
+                <% end %>
               <% end %>
             </td>
             <td>
