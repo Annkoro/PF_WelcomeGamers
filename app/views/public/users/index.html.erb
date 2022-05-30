@@ -11,9 +11,11 @@
 
         <% if @searches.present? %>
           <% @searches.each do |search| %>
+          <div class="bg-warning">
             <%= search.id %>：
             <%= link_to user_path(search.id) do %><%= search.name %><% end %>
             <%#= search.count　%>
+          </div>
           <% end %>
         <% else %>
           <p>検索結果はありません</p>
